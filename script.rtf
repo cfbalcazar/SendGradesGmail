@@ -1,0 +1,53 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red252\green99\blue95;\red12\green14\blue18;\red224\green232\blue240;
+\red198\green146\blue255;\red104\green177\blue255;\red150\green204\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c48235\c44706;\cssrgb\c5098\c6667\c9020;\cssrgb\c90196\c92941\c95294;
+\cssrgb\c82353\c65882\c100000;\cssrgb\c47451\c75294\c100000;\cssrgb\c64706\c83922\c100000;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 function\cf4 \strokec4  \cf5 \strokec5 sendEmail\cf4 \strokec4 () \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3   \cf2 \strokec2 var\cf4 \strokec4  array \cf2 \strokec2 =\cf4 \strokec4  SpreadsheetApp.getActiveSheet().getDataRange().getValues();      \cb1 \
+\cb3   \cf2 \strokec2 for\cf4 \strokec4 (\cf2 \strokec2 var\cf4 \strokec4  i\cf2 \strokec2 =\cf6 \strokec6 1\cf4 \strokec4 ;i\cf2 \strokec2 <\cf4 \strokec4 array.length;i\cf2 \strokec2 ++\cf4 \strokec4 )\{\cb1 \
+\
+\cb3     \cf2 \strokec2 //\cf4 \strokec4  Set up the objects\cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  loopName \cf2 \strokec2 =\cf4 \strokec4  array[\cf2 \strokec2 i\cf4 \strokec4 ][\cf6 \strokec6 0\cf4 \strokec4 ];\cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  loopEmail \cf2 \strokec2 =\cf4 \strokec4  array[\cf2 \strokec2 i\cf4 \strokec4 ][\cf6 \strokec6 1\cf4 \strokec4 ];\cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  loopGrade \cf2 \strokec2 =\cf4 \strokec4  array[\cf2 \strokec2 i\cf4 \strokec4 ][\cf6 \strokec6 7\cf4 \strokec4 ];\cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  name \cf2 \strokec2 =\cf4 \strokec4  loopName.split(\cf7 \strokec7 ","\cf4 \strokec4 )[\cf6 \strokec6 1\cf4 \strokec4 ];     \cb1 \
+\
+\cb3     \cf2 \strokec2 //\cf4 \strokec4  Write the body of the message\cb1 \
+\cb3     space \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n "\cf4 \strokec4 ;\cb1 \
+\cb3     greet \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "Dear "\cf4 \strokec4  \cf2 \strokec2 +\cf4 \strokec4  name;\cb1 \
+\cb3     text1 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n I made a tiny mistake and sent the previous assignments - apologies. Please find attached your second assignment, graded. My comments are in the PDF. Please download and open your assignment to see them. The comments are in the form of post-it notes that you should see by opening the document after downloading it; double-click on it."\cf4 \strokec4 ;\cb1 \
+\cb3     text3 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n If perhaps you cannot see the comments, download Adobe Acrobat Reader and open the PDF with this application - it will work."\cf4 \strokec4 ;\cb1 \
+\cb3     text4 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n If perhaps your grade is not the one you expected, book my office hours, or send me an email and we can set-up a meeting via zoom. Importantly, for this, come very well prepared because I can grade the assignment downwards if I notice that your knowledge about the topic we are evaluating is less satisfactory than I thought when I first graded the assignment."\cf4 \strokec4 ;  \cb1 \
+\cb3     \cf2 \strokec2 //\cf4 \strokec4  text5 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n Finally, if you scored below 20 in either exercise 5 or 6, I encourage you come to my office hours."\cf4 \strokec4 ;\cb1 \
+\cb3     text6 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n Your total grade is: "\cf4 \strokec4  \cf2 \strokec2 +\cf4 \strokec4  loopGrade \cf2 \strokec2 +\cf4 \strokec4  \cf7 \strokec7 ", out of a total of 100."\cf4 \strokec4 ; \cb1 \
+\cb3     text7 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n If you see any inconsistencies with the grade stated above and the one you have in the PDF let me know."\cf4 \strokec4 ;\cb1 \
+\cb3     text8 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n If you have any comments or questions please let me know."\cf4 \strokec4 ;\cb1 \
+\cb3     text9 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n Best regards,"\cf4 \strokec4 ;\cb1 \
+\cb3     text10 \cf2 \strokec2 =\cf4 \strokec4  \cf7 \strokec7 "\\n Felipe"\cf4 \strokec4 ;\cb1 \
+\
+\cb3     \cf2 \strokec2 //\cf4 \strokec4  Generate full body\cb1 \
+\cb3     mssgBody \cf2 \strokec2 =\cf4 \strokec4  greet \cf2 \strokec2 +\cf4 \strokec4  space \cf2 \strokec2 +\cf4 \strokec4  text1 \cf2 \strokec2 +\cf4 \strokec4  space \cf2 \strokec2 +\cf4 \strokec4  text3 \cf2 \strokec2 +\cf4 \strokec4  space \cf2 \strokec2 +\cf4 \strokec4  text4 \cf2 \strokec2 +\cf4 \strokec4  space \cf2 \strokec2 +\cf4 \strokec4  text6 \cf2 \strokec2 +\cf4 \strokec4  space \cf2 \strokec2 +\cf4 \strokec4  text7 \cf2 \strokec2 +\cf4 \strokec4  \cb1 \
+\cb3     space \cf2 \strokec2 +\cf4 \strokec4  text8 \cf2 \strokec2 +\cf4 \strokec4  space \cf2 \strokec2 +\cf4 \strokec4  text9 \cf2 \strokec2 +\cf4 \strokec4  space \cf2 \strokec2 +\cf4 \strokec4  text10; \cb1 \
+\
+\cb3     \cf2 \strokec2 //\cf4 \strokec4  Get folder and file\cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  folders \cf2 \strokec2 =\cf4 \strokec4  DriveApp.getFoldersByName(\cf7 \strokec7 "proposals"\cf4 \strokec4 );\cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  folder \cf2 \strokec2 =\cf4 \strokec4  folders.next();\cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  files \cf2 \strokec2 =\cf4 \strokec4  folder.getFilesByName(loopEmail\cf2 \strokec2 +\cf7 \strokec7 ".pdf"\cf4 \strokec4 ); \cb1 \
+\cb3     \cf2 \strokec2 var\cf4 \strokec4  file \cf2 \strokec2 =\cf4 \strokec4  files.next(); \cb1 \
+\
+\cb3     \cf2 \strokec2 //\cf4 \strokec4  Send email\cb1 \
+\cb3     MailApp.sendEmail(loopEmail\cf2 \strokec2 +\cf7 \strokec7 "@nyu.edu"\cf2 \strokec2 ,\cf4 \strokec4  \cf7 \strokec7 "Second assignment graded"\cf2 \strokec2 ,\cf4 \strokec4  mssgBody\cf2 \strokec2 ,\cf4 \strokec4  \{attachments:[\cf2 \strokec2 file.getAs\cf4 \strokec4 (MimeType.PDF)]\});\cb1 \
+\
+\
+\cb3   \}\cb1 \
+\cb3 \}\cb1 \
+\
+}
