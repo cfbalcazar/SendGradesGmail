@@ -19,7 +19,7 @@ function sendEmail() {
     text7 = "\n If you see any inconsistencies with the grade stated above and the one you have in the PDF let me know.";
     text8 = "\n If you have any comments or questions please let me know.";
     text9 = "\n Best regards,";
-    text10 = "\n Felipe";
+    text10 = "\n Instructor name";
 
     // Generate full body
     mssgBody = greet + space + text1 + space + text3 + space + text4 + space + text6 + space + text7 + 
@@ -32,7 +32,7 @@ function sendEmail() {
     var file = files.next(); 
 
     // Send email
-    MailApp.sendEmail(loopEmail+"@nyu.edu", "Second assignment graded", mssgBody, {attachments:[file.getAs(MimeType.PDF)]});
+    MailApp.sendEmail(loopEmail+"@your_institution.edu", "Second assignment graded", mssgBody, {attachments:[file.getAs(MimeType.PDF)]});
 
 
   }
